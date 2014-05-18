@@ -54,6 +54,14 @@ indexApp.controller('IndexCtrl', function ($scope) {
                 new Sample( 
                     'git add --A',
                     'Adds file(s) to staging area, including new'
+                ),
+                new Sample(
+                    'git commit -m "[descriptive message]"',
+                    'Commits staged files'
+                ),
+                new Sample(
+                    'git commit --am "[descriptive message]"',
+                    'Commits with a message and automatically stage all tracked & modified files before the commit'
                 )
             ],
             [
