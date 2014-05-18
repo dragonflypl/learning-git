@@ -51,7 +51,7 @@ indexApp.controller('IndexCtrl', function ($scope) {
                     'git add [filename] --u',
                     'Adds file(s) that are already in repo to staging area'
                 ),
-                new Sample(
+                new Sample( 
                     'git add --A',
                     'Adds file(s) to staging area, including new'
                 )
