@@ -89,10 +89,17 @@ indexApp.controller('IndexCtrl', function ($scope) {
                         new Hint('After branch is created', 'Creating a branch does not automatically make it active branch. After creating a branch, manual branch switching is required.')
                     ]),
                 new Sample('git checkout [branch-name]', 'Switches to the specified branch and updates the working directory'),
-                new Sample('git checkout -b [branch-name]', 'Creates a new branch, switches to it and updates the working directory')
+                new Sample('git checkout -b [branch-name]', 'Creates a new branch, switches to it and updates the working directory'),
+                new Sample('git branch -d [branch-name]', 'Deletes the specified branch')
             ],
             []
-        )
+        ),
+        new CheatSheetInfo(
+            'GROUP CHANGES - MERGING',
+            '',
+            [
+                new Sample('git merge [branch]', 'Combines the specified branch’s history into the current branch')
+            ])
     ];
 
     function CheatSheetInfo(name, desc, samples, hints) {
