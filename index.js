@@ -51,9 +51,17 @@ indexApp.controller('IndexCtrl', function ($scope) {
                     'git add [filename] --u',
                     'Adds file(s) that are already in repo to staging area'
                 ),
-                new Sample( 
+                new Sample(
                     'git add -A',
                     'Adds files to staging area, including new'
+                ),
+                new Sample(
+                    'git diff',
+                    'Shows file differences not yet staged'
+                ),
+                new Sample(
+                    'git diff --staged',
+                    'Shows file differences of staged files'
                 ),
                 new Sample(
                     'git commit -m "[descriptive message]"',
