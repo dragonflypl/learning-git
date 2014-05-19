@@ -52,8 +52,8 @@ indexApp.controller('IndexCtrl', function ($scope) {
                     'Adds file(s) that are already in repo to staging area'
                 ),
                 new Sample( 
-                    'git add --A',
-                    'Adds file(s) to staging area, including new'
+                    'git add -A',
+                    'Adds files to staging area, including new'
                 ),
                 new Sample(
                     'git commit -m "[descriptive message]"',
