@@ -78,7 +78,20 @@ indexApp.controller('IndexCtrl', function ($scope) {
                     'set of files to be updated with next commit'
                 )
             ]
-
+        ),
+        new CheatSheetInfo(
+            'GROUP CHANGES - BRANCHING',
+            'Name a series of commits and combine completed efforts',
+            [
+                new Sample('git branch', 'Lists all local branches in the current repository & marks current branch'),
+                new Sample('git branch [branch-name]', 'Creates a new branch',
+                    [
+                        new Hint('After branch is created', 'Creating a branch does not automatically make it active branch. After creating a branch, manual branch switching is required.')
+                    ]),
+                new Sample('git checkout [branch-name]', 'Switches to the specified branch and updates the working directory'),
+                new Sample('git checkout -b [branch-name]', 'Creates a new branch, switches to it and updates the working directory')
+            ],
+            []
         )
     ];
 
@@ -94,8 +107,9 @@ indexApp.controller('IndexCtrl', function ($scope) {
         this.desc = desc;
     }
 
-    function Sample(code, desc) {
+    function Sample(code, desc, hints) {
         this.code = code;
         this.desc = desc;
+        this.hints = hints;
     }
 });

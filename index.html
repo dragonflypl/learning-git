@@ -20,6 +20,9 @@
                         <div ng-repeat="sample in cheatSheet.samples">
                             <code>{{sample.code}}</code>
                             <h5>{{sample.desc}}</h5>
+                            <div ng-repeat="hint in sample.hints" class="alert alert-info">
+                                <strong>{{hint.name}}: </strong>{{hint.desc}}
+                            </div>
                         </div>
                     </div>
                     <div class="panel-footer">
