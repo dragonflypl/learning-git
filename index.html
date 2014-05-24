@@ -1,16 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang="en" ng-app="indexApp">
-    <head>
-        <meta charset="utf-8">
-        <title>Cheat sheet</title>
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="index.css">
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="index.js"></script>
-    </head>
-    <body ng-controller="IndexCtrl">
-        <div class="col-sm-6">
-            <div ng-repeat="cheatSheet in cheatSheetOne" class="row">
+<head>
+    <meta charset="utf-8">
+    <title>Cheat sheet</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body ng-controller="IndexCtrl">
+    <div class="container-fluid">
+        <div class="col-sm-6" ng-repeat="cheatSheetCollection in cheatSheets">
+            <div ng-repeat="cheatSheet in cheatSheetCollection">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{cheatSheet.name}}</h3>
@@ -33,5 +34,6 @@
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>

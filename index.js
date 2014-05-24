@@ -2,7 +2,7 @@ var indexApp = angular.module('indexApp', []);
 
 indexApp.controller('IndexCtrl', function ($scope) {
 
-    $scope.cheatSheetOne =
+    var cheatSheetOne =
     [
         new CheatSheetInfo(
             'CREATE REPOSITORIES',
@@ -78,7 +78,10 @@ indexApp.controller('IndexCtrl', function ($scope) {
                     'set of files to be updated with next commit'
                 )
             ]
-        ),
+        )
+    ];
+
+    var cheatSheetTwo = [
         new CheatSheetInfo(
             'GROUP CHANGES - BRANCHING',
             'Name a series of commits and combine completed efforts',
@@ -98,9 +101,19 @@ indexApp.controller('IndexCtrl', function ($scope) {
             'GROUP CHANGES - MERGING',
             '',
             [
-                new Sample('git merge [branch]', 'Combines the specified branch’s history into the current branch')
+                new Sample('git merge [branch]', 'Combines the specified branch’s history into the current branch'),
+                new Sample(
+                    'git branch --merged',
+                    ' This command lists all branches that are included in current branch.',
+                    [new Hint(
+                        'How to check if branch is included in current branch?',
+                        'It does not mean that branches current state was merged - it means that branch was merged at some point or another'
+                    )])
+
             ])
     ];
+
+    $scope.cheatSheets = [cheatSheetOne, cheatSheetTwo];
 
     function CheatSheetInfo(name, desc, samples, hints) {
         this.name = name;
