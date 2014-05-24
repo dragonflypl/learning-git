@@ -93,7 +93,12 @@ indexApp.controller('IndexCtrl', function ($scope) {
                     ]),
                 new Sample('git checkout [branch-name]', 'Switches to the specified branch and updates the working directory'),
                 new Sample('git checkout -b [branch-name]', 'Creates a new branch, switches to it and updates the working directory'),
-                new Sample('git branch -d [branch-name]', 'Deletes the specified branch')
+                new Sample('git branch -d [branch-name]', 'Deletes the specified branch',
+                    [
+                        new Hint(
+                            "Git does not allow to delete a branch",
+                            "By default Git does not allow to delete a branch unless it has been merged. To force it use -D."
+                        )])
             ],
             []
         ),
@@ -104,12 +109,24 @@ indexApp.controller('IndexCtrl', function ($scope) {
                 new Sample('git merge [branch]', 'Combines the specified branch’s history into the current branch'),
                 new Sample(
                     'git branch --merged',
-                    ' This command lists all branches that are included in current branch.',
-                    [new Hint(
-                        'How to check if branch is included in current branch?',
-                        'It does not mean that branches current state was merged - it means that branch was merged at some point or another'
-                    )])
-
+                    ' This command lists all branches that are included in current branch.'
+                ),
+                new Sample(
+                    'git branch --no-merge',
+                    ' This command lists all branches that are not included in current branch.'
+                )
+            ]),
+        new CheatSheetInfo(
+            'GROUP CHANGES - REMOTES',
+            '',
+            [
+                new Sample('git remote add [remote-name] [repository-url]', "Add remote"),
+                new Sample('git branch -a', 'List local & remote branches'),
+                new Sample('git branch -r', 'list remote branches (the same as `git remote`)'),
+                new Sample('git ls-remote', "Display detailed remote branch info"),
+                new Sample(
+                    'git push -u [remote-name] [branch-name]', 
+                    'Pushes [branch-name] to [remote-name]')
             ])
     ];
 
