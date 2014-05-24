@@ -126,7 +126,13 @@ indexApp.controller('IndexCtrl', function ($scope) {
                 new Sample('git ls-remote', "Display detailed remote branch info"),
                 new Sample(
                     'git push -u [remote-name] [branch-name]', 
-                    'Pushes [branch-name] to [remote-name]')
+                    'Pushes [branch-name] to [remote-name]',
+                    [
+                        new Hint(
+                            "push.default",
+                            "Use `push.default` config option to specify a link between local branch and remote eg. git config --global push.default simple." + 
+                            "When done, `git push` will suffice to push changes")
+                    ])
             ])
     ];
 
