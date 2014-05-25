@@ -39,6 +39,10 @@ indexApp.controller('IndexCtrl', function ($scope) {
                 new Sample(
                     'git config --list',
                     'See git configuration'
+                ),
+                new Sample(
+                    'git config --global core.editor "[path-to-nodepad++.exe] -multiInst -nosession -noPlugin -notabbar"',
+                    "Configure notepad++ as git editor"
                 )
             ]
         ),
