@@ -6,33 +6,40 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="index.css">
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="index.js"></script>
 </head>
 <body ng-controller="IndexCtrl">
     <div class="container-fluid">
         <div class="col-sm-6" ng-repeat="cheatSheetCollection in cheatSheets">
-            <div ng-repeat="cheatSheet in cheatSheetCollection">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">{{cheatSheet.name}}</h3>
-                    </div>
-                    <div class="panel-body">
-                        <h4>{{cheatSheet.desc}}</h4>
-                        <div ng-repeat="sample in cheatSheet.samples">
-                            <code class="sample-code">{{sample.code}}</code>
-                            <h5>{{sample.desc}}</h5>
-                            <div ng-repeat="hint in sample.hints" class="alert alert-info">
-                                <strong>{{hint.name}}: </strong>{{hint.desc}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <div ng-repeat="hint in cheatSheet.hints" class="alert alert-info">
+            <div class="panel panel-default" ng-repeat="cheatSheet in cheatSheetCollection">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{cheatSheet.name}}</h3>
+                </div>
+                <div class="panel-body">
+                    <h4>{{cheatSheet.desc}}</h4>
+                    <div ng-repeat="sample in cheatSheet.samples">
+                        <code class="sample-code">{{sample.code}}</code>
+                        <h5>{{sample.desc}}</h5>
+                        <div ng-repeat="hint in sample.hints" class="alert alert-info">
                             <strong>{{hint.name}}: </strong>{{hint.desc}}
                         </div>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <div ng-repeat="hint in cheatSheet.hints" class="alert alert-info">
+                        <strong>{{hint.name}}: </strong>{{hint.desc}}
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-sm-12">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="resource in resources" ng-bind-html="resource">
+                </li>
+            </ul>
         </div>
     </div>
 </body>

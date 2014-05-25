@@ -1,6 +1,13 @@
-var indexApp = angular.module('indexApp', []);
+var indexApp = angular.module('indexApp', ['ngSanitize']);
 
 indexApp.controller('IndexCtrl', function ($scope) {
+
+    $scope.resources =
+        [
+            "<a href='http://git-scm.com'>http://git-scm.com</a> - Windows Git client",
+            "<a href='http://git-scm.com/docs'>http://git-scm.com/docs</a> - Git reference",
+            '<a href="http://en.wikipedia.org/wiki/Markdown">http://en.wikipedia.org/wiki/Markdown</a> - syntax for creating readme files'
+        ];
 
     var cheatSheetOne =
     [
@@ -125,12 +132,12 @@ indexApp.controller('IndexCtrl', function ($scope) {
                 new Sample('git branch -r', 'list remote branches (the same as `git remote`)'),
                 new Sample('git ls-remote', "Display detailed remote branch info"),
                 new Sample(
-                    'git push -u [remote-name] [branch-name]', 
+                    'git push -u [remote-name] [branch-name]',
                     'Pushes [branch-name] to [remote-name]',
                     [
                         new Hint(
                             "push.default",
-                            "Use `push.default` config option to specify a link between local branch and remote eg. git config --global push.default simple." + 
+                            "Use `push.default` config option to specify a link between local branch and remote eg. git config --global push.default simple." +
                             "When done, `git push` will suffice to push changes")
                     ])
             ])
