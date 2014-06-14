@@ -6,7 +6,8 @@ indexApp.controller('IndexCtrl', function ($scope) {
         [
             "<a href='http://git-scm.com'>http://git-scm.com</a> - Windows Git client",
             "<a href='http://git-scm.com/docs'>http://git-scm.com/docs</a> - Git reference",
-            '<a href="http://en.wikipedia.org/wiki/Markdown">http://en.wikipedia.org/wiki/Markdown</a> - syntax for creating readme files'
+            '<a href="http://en.wikipedia.org/wiki/Markdown">http://en.wikipedia.org/wiki/Markdown</a> - syntax for creating readme files',
+            'http://jameswillweb.github.io/github-for-web-designers/reference.html'
         ];
 
     var cheatSheetOne =
@@ -125,7 +126,10 @@ indexApp.controller('IndexCtrl', function ($scope) {
                 new Sample(
                     'git branch --no-merge',
                     ' This command lists all branches that are not included in current branch.'
-                )
+                ),
+                new Sample(
+                    'git checkout --theirs -- [file-path]',
+                    'When conflict occurs, this command takes file from branch that was merged. Useful with binary files.')
             ]),
         new CheatSheetInfo(
             'GROUP CHANGES - REMOTES',
