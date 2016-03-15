@@ -75,7 +75,7 @@ To add the file to staging area issue:
 - ```git add --u```: add to staging area files already in repo
 - ```git add --A```: add all files, including new
 
-**TIP: ** : ```git add -i``` enters interactive mode that enables "partial" commits (e.g. stage parts of the file).
+**TIP** : ```git add -i``` enters interactive mode that enables "partial" commits (e.g. stage parts of the file).
 
 Git records **changes** in file's content.
 
@@ -114,7 +114,7 @@ More advanced usage:
 - ```git log --since``` (or --after etc, many options are available)
 - ```git log sha1..sha2``` - specify a range
 - ```git log sha1.. --author username filename``` - gives logs that affect a file since sha1 and made by username
-- ```git log --pretty="%h, %cn, %cr" - custom log report
+- ```git log --pretty="%h, %cn, %cr"``` - custom log report
 - ```git log -n``` : limits to n number of commits
 - ```git log --grep="message"``` : search with regex
 - ```gitk``` - graphical tool to view history (shipped with git)
