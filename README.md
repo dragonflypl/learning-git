@@ -320,6 +320,7 @@ Reset flavours:
 - ```.gitkeep``` : put this dummy file in empty directory that needs to be commited (git by default ignores empty directories)
 - ```git merge kdiff3```: use kdiff3 http://www.blog.project13.pl/index.php/coding/1192/setup-git-on-windows-to-use-kdiff3-as-its-mergetool/
 - ```git tag``` - lists tags in repo 
+- ```git show-ref <branchname>``` - quick way to see commits associated with branches
 
 # Recovering 
 
