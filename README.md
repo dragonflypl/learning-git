@@ -321,6 +321,23 @@ Reset flavours:
 - ```git merge kdiff3```: use kdiff3 http://www.blog.project13.pl/index.php/coding/1192/setup-git-on-windows-to-use-kdiff3-as-its-mergetool/
 - ```git tag``` - lists tags in repo 
 - ```git show-ref <branchname>``` - quick way to see commits associated with branches
+- Rebase vs Merge - it turns out that rebase deletes merge commits (mind-boggling)! It's described here: https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/ . 
+
+# Rebase vs Merge:
+
+The Golden Rule of Rebasing: never use it on public branches
+
+Rules of thumb:
+- When pulling changes from origin/develop onto your local develop use rebase.
+- When finishing a feature branch merge the changes back to develop.
+
+Common usages of rebase:
+- cleaning up local history
+- incorporating upstream changes into a feature
+- integrating an approved feature: by performing a rebase before the merge, you’re assured that the merge will be fast-forwarded, resulting in a perfectly linear history. This also gives you the chance to squash any follow-up commits added during a pull request.
+
+When not to use rebase:
+- after pushing / PR. As soon as you make the pull request, other developers will be looking at your commits, which means that it’s a public branch. Re-writing its history will make it impossible for Git and your teammates to track any follow-up commits added to the feature. Any changes from other developers need to be incorporated with git merge instead of git rebase.
 
 # Recovering 
 
@@ -328,6 +345,7 @@ Reset flavours:
 
 # Resources
 
+- [https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/](https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/ "Git - When to Merge vs. When to Rebase") - Git - When to Merge vs. When to Rebase
 - [http://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html](http://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html "The anatomy of a Git commit") - The anatomy of a Git commit
 - [http://stackoverflow.com/questions/2530060/can-you-explain-what-git-reset-does-in-plain-english](http://stackoverflow.com/questions/2530060/can-you-explain-what-git-reset-does-in-plain-english "How git reset works") - how git reset works
 - [https://help.github.com/articles/set-up-git](https://help.github.com/articles/set-up-git "Password Caching") : Password caching
