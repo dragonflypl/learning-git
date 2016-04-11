@@ -345,6 +345,7 @@ When not to use rebase:
 
 # Resources
 
+- [https://www.atlassian.com/git/tutorials/merging-vs-rebasing/workflow-walkthrough](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/workflow-walkthrough "Merging vs. Rebasing") - Merging vs. Rebasing
 - [https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/](https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/ "Git - When to Merge vs. When to Rebase") - Git - When to Merge vs. When to Rebase
 - [http://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html](http://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html "The anatomy of a Git commit") - The anatomy of a Git commit
 - [http://stackoverflow.com/questions/2530060/can-you-explain-what-git-reset-does-in-plain-english](http://stackoverflow.com/questions/2530060/can-you-explain-what-git-reset-does-in-plain-english "How git reset works") - how git reset works
