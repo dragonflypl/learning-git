@@ -51,7 +51,7 @@ E.g.
 
 Modified log command that gives some visual info about commits:
 
-```git config --global alias.lga "log --graph --oneline --all --decorate"```
+```git config --global alias.lgas "log --graph --oneline --all --decorate  --max-count 10"```
 
     git lga
     * d060744 (HEAD -master) Fourth
